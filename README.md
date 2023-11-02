@@ -11,25 +11,25 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/MoonGrt/xxxxx/">
+  <a href="https://github.com/MoonGrt/STM32-fly_control/">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
-  <h3 align="center">工程名称</h3>
+  <h3 align="center">STM-四轴飞控</h3>
   <p align="center">
     简单的描述…………
     <br />
-    <a href="https://github.com/MoonGrt/xxxxx"><strong>探索本项目的文档 ?</strong></a>
+    <a href="https://github.com/MoonGrt/STM32-fly_control"><strong>探索本项目的文档 ?</strong></a>
     <br />
     <br />
-    <a href="https://github.com/MoonGrt/xxxxx">查看Demo</a>
+    <a href="https://github.com/MoonGrt/STM32-fly_control">查看Demo</a>
     ·
-    <a href="https://github.com/MoonGrt/xxxxx/issues">报告Bug</a>
+    <a href="https://github.com/MoonGrt/STM32-fly_control/issues">报告Bug</a>
     ·
-    <a href="https://github.com/MoonGrt/xxxxx/issues">提出新特性</a>
+    <a href="https://github.com/MoonGrt/STM32-fly_control/issues">提出新特性</a>
   </p>
 </p>
 
-ProjectName and Description
+基于stm32和mpu6050的四轴飞行控制器。
  
 ## 目录
 
@@ -49,19 +49,14 @@ ProjectName and Description
 
 ###### 开发前的配置要求
 
-1. xxxxx x.x.x
+1. stm32f103c8t6
 2. xxxxx x.x.x
 
 ### 文件目录说明
 
 ```
-filetree 
-├── ARCHITECTURE.md
-├── /docs/
-│  ├── /rules/
-│  │  ├── backend.txt
-│  │  └── frontend.txt
-├── manage.py
+Filetree 
+├── README.md
 ```
 
 ### 框架
@@ -100,15 +95,15 @@ filetree
 - [xxxxxxxxxxxxxx](https://xxxx)
 
 <!-- links -->
-[contributors-shield]: https://img.shields.io/github/contributors/MoonGrt/xxxxx.svg?style=flat-square
-[contributors-url]: https://github.com/MoonGrt/xxxxx/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/MoonGrt/xxxxx.svg?style=flat-square
-[forks-url]: https://github.com/MoonGrt/xxxxx/network/members
-[stars-shield]: https://img.shields.io/github/stars/MoonGrt/xxxxx.svg?style=flat-square
-[stars-url]: https://github.com/MoonGrt/xxxxx/stargazers
-[issues-shield]: https://img.shields.io/github/issues/MoonGrt/xxxxx.svg?style=flat-square
-[issues-url]: https://img.shields.io/github/issues/MoonGrt/xxxxx.svg
-[license-shield]: https://img.shields.io/github/license/MoonGrt/xxxxx.svg?style=flat-square
-[license-url]: https://github.com/MoonGrt/xxxxx/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/MoonGrt/STM32-fly_control.svg?style=flat-square
+[contributors-url]: https://github.com/MoonGrt/STM32-fly_control/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/MoonGrt/STM32-fly_control.svg?style=flat-square
+[forks-url]: https://github.com/MoonGrt/STM32-fly_control/network/members
+[stars-shield]: https://img.shields.io/github/stars/MoonGrt/STM32-fly_control.svg?style=flat-square
+[stars-url]: https://github.com/MoonGrt/STM32-fly_control/stargazers
+[issues-shield]: https://img.shields.io/github/issues/MoonGrt/STM32-fly_control.svg?style=flat-square
+[issues-url]: https://img.shields.io/github/issues/MoonGrt/STM32-fly_control.svg
+[license-shield]: https://img.shields.io/github/license/MoonGrt/STM32-fly_control.svg?style=flat-square
+[license-url]: https://github.com/MoonGrt/STM32-fly_control/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/shaojintian
