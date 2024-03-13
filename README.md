@@ -1,109 +1,157 @@
-# ProjectName
+<div id="top"></div>
 
-<!-- PROJECT SHIELDS -->
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
+
 
 <!-- PROJECT LOGO -->
 <br />
-<p align="center">
-  <a href="https://github.com/MoonGrt/STM32-fly_control/">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
-  <h3 align="center">STM-ËÄÖá·É¿Ø</h3>
-  <p align="center">
-    ¼òµ¥µÄÃèÊö¡­¡­¡­¡­
-    <br />
-    <a href="https://github.com/MoonGrt/STM32-fly_control"><strong>Ì½Ë÷±¾ÏîÄ¿µÄÎÄµµ ?</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/MoonGrt/STM32-fly_control">²é¿´Demo</a>
-    ¡¤
-    <a href="https://github.com/MoonGrt/STM32-fly_control/issues">±¨¸æBug</a>
-    ¡¤
-    <a href="https://github.com/MoonGrt/STM32-fly_control/issues">Ìá³öĞÂÌØĞÔ</a>
-  </p>
-</p>
+<div align="center">
+	<a href="https://github.com/MoonGrt/STM32-fly_control">
+	<img src="images/logo.png" alt="Logo" width="80" height="80">
+	</a>
+<h3 align="center">STM32-fly_control</h3>
+	<p align="center">
+	This project entails a quadcopter built around the STM32F103C8T6 microcontroller. It utilizes an MPU6050 sensor to continuously gather attitude data, which is then processed using a dual-loop PID control algorithm to maintain stable flight. Additionally, the quadcopter is equipped with Bluetooth connectivity, enabling remote control and monitoring of its operations. Integrating both hardware and software design, this project aims to deliver a reliable and stable quadcopter system suitable for enthusiasts, students, and researchers in the field of unmanned aerial vehicles.
+	<br />
+	<a href="https://github.com/MoonGrt/STM32-fly_control"><strong>Explore the docs Â»</strong></a>
+	<br />
+	<br />
+	<a href="https://github.com/MoonGrt/STM32-fly_control">View Demo</a>
+	Â·
+	<a href="https://github.com/MoonGrt/STM32-fly_control/issues">Report Bug</a>
+	Â·
+	<a href="https://github.com/MoonGrt/STM32-fly_control/issues">Request Feature</a>
+	</p>
+</div>
 
-»ùÓÚstm32ºÍmpu6050µÄËÄÖá·ÉĞĞ¿ØÖÆÆ÷¡£
- 
-## Ä¿Â¼
 
-- [ÉÏÊÖÖ¸ÄÏ](#ÉÏÊÖÖ¸ÄÏ)
-  - [¿ª·¢Ç°µÄÅäÖÃÒªÇó](#¿ª·¢Ç°µÄÅäÖÃÒªÇó)
-- [ÎÄ¼şÄ¿Â¼ËµÃ÷](#ÎÄ¼şÄ¿Â¼ËµÃ÷)
-- [¿ò¼Ü](#Ê¹ÓÃµ½µÄ¿ò¼Ü)
-- [¹±Ï×Õß](#¹±Ï×Õß)
-  - [ÈçºÎ²ÎÓë¿ªÔ´ÏîÄ¿](#²ÎÓë¿ªÔ´ÏîÄ¿)
-- [°æ±¾¿ØÖÆ](#°æ±¾¿ØÖÆ)
-- [×÷Õß](#×÷Õß)
-- [ÃùĞ»](#ÃùĞ»)
+<!-- CONTENTS -->
+<details open>
+  <summary>Contents</summary>
+  <ol>
+    <li><a href="#file-tree">File Tree</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
 
-### ÉÏÊÖÖ¸ÄÏ
 
-¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­¡­
-
-###### ¿ª·¢Ç°µÄÅäÖÃÒªÇó
-
-1. stm32f103c8t6
-2. xxxxx x.x.x
-
-### ÎÄ¼şÄ¿Â¼ËµÃ÷
+<!-- FILE TREE -->
+## File Tree
 
 ```
-Filetree 
-©À©¤©¤ README.md
+â””â”€ Project
+  â”œâ”€ EventRecorderStub.scvd
+  â”œâ”€ flight_control4.zip
+  â”œâ”€ keilkill.bat
+  â”œâ”€ Project.uvguix.Moon
+  â”œâ”€ Project.uvoptx
+  â”œâ”€ Project.uvprojx
+  â”œâ”€ README.md
+  â”œâ”€ /.vscode/
+  â”œâ”€ /DebugConfig/
+  â”œâ”€ /Hardware/
+  â”‚ â”œâ”€ LED.c
+  â”‚ â”œâ”€ LED.h
+  â”‚ â”œâ”€ mpu6050.c
+  â”‚ â””â”€ mpu6050.h
+  â”œâ”€ /images/
+  â”œâ”€ /Library/
+  â”œâ”€ /Listings/
+  â”œâ”€ /Math/
+  â”‚ â”œâ”€ filter.c
+  â”‚ â”œâ”€ filter.h
+  â”‚ â”œâ”€ imu.c
+  â”‚ â”œâ”€ imu.h
+  â”‚ â”œâ”€ kalman.c
+  â”‚ â”œâ”€ kalman.h
+  â”‚ â”œâ”€ myMath.c
+  â”‚ â”œâ”€ myMath.h
+  â”‚ â”œâ”€ pid.c
+  â”‚ â””â”€ pid.h
+  â”œâ”€ /Objects/
+  â”œâ”€ /Start/
+  â”œâ”€ /System/
+  â”‚ â”œâ”€ delay.c
+  â”‚ â”œâ”€ delay.h
+  â”‚ â”œâ”€ GPIO.h
+  â”‚ â”œâ”€ I2C.c
+  â”‚ â”œâ”€ I2C.h
+  â”‚ â”œâ”€ TIM.c
+  â”‚ â”œâ”€ TIM.h
+  â”‚ â”œâ”€ USART.c
+  â”‚ â””â”€ USART.h
+  â””â”€ /User/
+    â”œâ”€ ALL_DATA.h
+    â”œâ”€ ANO_DT.c
+    â”œâ”€ ANO_DT.h
+    â”œâ”€ control.c
+    â”œâ”€ control.h
+    â”œâ”€ main.c
+    â”œâ”€ remote.c
+    â”œâ”€ remote.h
+    â”œâ”€ stm32f10x_conf.h
+    â”œâ”€ stm32f10x_it.c
+    â””â”€ stm32f10x_it.h
+
 ```
 
-### ¿ò¼Ü
 
-- [xxxxxxx](https://getbootstrap.com)
-- [xxxxxxx](https://jquery.com)
-- [xxxxxxx](https://laravel.com)
-
-### ¹±Ï×Õß
-
-ÇëÔÄ¶Á**CONTRIBUTING.md** ²éÔÄÎª¸ÃÏîÄ¿×ö³ö¹±Ï×µÄ¿ª·¢Õß¡£
-
-#### ²ÎÓë¿ªÔ´ÏîÄ¿
-
-¹±Ï×Ê¹¿ªÔ´ÉçÇø³ÉÎªÒ»¸öÑ§Ï°¡¢¼¤ÀøºÍ´´ÔìµÄ¾ø¼Ñ³¡Ëù¡£ÄãËù×÷µÄÈÎºÎ¹±Ï×¶¼ÊÇ**·Ç³£¸ĞĞ»**µÄ¡£
-
+<!-- CONTRIBUTING -->
+## Contributing
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
 1. Fork the Project
-2. Create your Feature Branch
-3. Commit your Changes
-4. Push to the Branch
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
+<p align="right">(<a href="#top">top</a>)</p>
 
-### °æ±¾¿ØÖÆ
 
-¸ÃÏîÄ¿Ê¹ÓÃGit½øĞĞ°æ±¾¹ÜÀí¡£Äú¿ÉÒÔÔÚrepository²Î¿´µ±Ç°¿ÉÓÃ°æ±¾¡£
+<!-- LICENSE -->
+## License
+Distributed under the MIT License. See `LICENSE` for more information.
+<p align="right">(<a href="#top">top</a>)</p>
 
-### ×÷Õß
 
-1561145394@qq.com
- *ÄúÒ²¿ÉÒÔÔÚ¹±Ï×ÕßÃûµ¥ÖĞ²Î¿´ËùÓĞ²ÎÓë¸ÃÏîÄ¿µÄ¿ª·¢Õß¡£*
+<!-- CONTACT -->
+## Contact
+MoonGrt - 1561145394@qq.com
+Project Link: [MoonGrt/](https://github.com/MoonGrt/)
+<p align="right">(<a href="#top">top</a>)</p>
 
-### ÃùĞ»
 
-- [GitHub Pages](https://pages.github.com)
-- [xxxxxxxxxxxxxx](https://xxxx)
-- [xxxxxxxxxxxxxx](https://xxxx)
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
+* [Choose an Open Source License](https://choosealicense.com)
+* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
+* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
+* [Malven's Grid Cheatsheet](https://grid.malven.co/)
+* [Img Shields](https://shields.io)
+* [GitHub Pages](https://pages.github.com)
+* [Font Awesome](https://fontawesome.com)
+* [React Icons](https://react-icons.github.io/react-icons/search)
+<p align="right">(<a href="#top">top</a>)</p>
 
-<!-- links -->
-[contributors-shield]: https://img.shields.io/github/contributors/MoonGrt/STM32-fly_control.svg?style=flat-square
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/MoonGrt/STM32-fly_control.svg?style=for-the-badge
 [contributors-url]: https://github.com/MoonGrt/STM32-fly_control/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/MoonGrt/STM32-fly_control.svg?style=flat-square
+[forks-shield]: https://img.shields.io/github/forks/MoonGrt/STM32-fly_control.svg?style=for-the-badge
 [forks-url]: https://github.com/MoonGrt/STM32-fly_control/network/members
-[stars-shield]: https://img.shields.io/github/stars/MoonGrt/STM32-fly_control.svg?style=flat-square
+[stars-shield]: https://img.shields.io/github/stars/MoonGrt/STM32-fly_control.svg?style=for-the-badge
 [stars-url]: https://github.com/MoonGrt/STM32-fly_control/stargazers
-[issues-shield]: https://img.shields.io/github/issues/MoonGrt/STM32-fly_control.svg?style=flat-square
-[issues-url]: https://img.shields.io/github/issues/MoonGrt/STM32-fly_control.svg
-[license-shield]: https://img.shields.io/github/license/MoonGrt/STM32-fly_control.svg?style=flat-square
-[license-url]: https://github.com/MoonGrt/STM32-fly_control/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/shaojintian
+[issues-shield]: https://img.shields.io/github/issues/MoonGrt/STM32-fly_control.svg?style=for-the-badge
+[issues-url]: https://github.com/MoonGrt/STM32-fly_control/issues
+[license-shield]: https://img.shields.io/github/license/MoonGrt/STM32-fly_control.svg?style=for-the-badge
+[license-url]: https://github.com/MoonGrt/STM32-fly_control/blob/master/LICENSE
+
