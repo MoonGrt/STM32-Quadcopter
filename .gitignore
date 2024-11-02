@@ -1,2 +1,4 @@
-
-
+*.dbgconf
+*.map
+*.lst
+Software/Objects/*
