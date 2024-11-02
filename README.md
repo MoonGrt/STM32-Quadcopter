@@ -11,20 +11,20 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-    <a href="https://github.com/MoonGrt/STM32-Fly_Control">
+    <a href="https://github.com/MoonGrt/STM32-Quadcopter">
     <img src="Document/images/logo.png" alt="Logo" width="80" height="80">
     </a>
-<h3 align="center">STM32-Fly_Control</h3>
+<h3 align="center">STM32-Quadcopter</h3>
     <p align="center">
     Design of a quadcopter based on STM32F103C8T6 microcontroller
     <br />
-    <a href="https://github.com/MoonGrt/STM32-Fly_Control"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/MoonGrt/STM32-Quadcopter"><strong>Explore the docs »</strong></a>
     <br />
-    <a href="https://github.com/MoonGrt/STM32-Fly_Control">View Demo</a>
+    <a href="https://github.com/MoonGrt/STM32-Quadcopter">View Demo</a>
     ·
-    <a href="https://github.com/MoonGrt/STM32-Fly_Control/issues">Report Bug</a>
+    <a href="https://github.com/MoonGrt/STM32-Quadcopter/issues">Report Bug</a>
     ·
-    <a href="https://github.com/MoonGrt/STM32-Fly_Control/issues">Request Feature</a>
+    <a href="https://github.com/MoonGrt/STM32-Quadcopter/issues">Request Feature</a>
     </p>
 </div>
 
@@ -165,7 +165,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ## Contact
 
 MoonGrt - 1561145394@qq.com
-Project Link: [MoonGrt/STM32-Fly_Control](https://github.com/MoonGrt/STM32-Fly_Control)
+Project Link: [MoonGrt/STM32-Quadcopter](https://github.com/MoonGrt/STM32-Quadcopter)
 <p align="right">(<a href="#top">top</a>)</p>
 
 
@@ -188,14 +188,14 @@ Project Link: [MoonGrt/STM32-Fly_Control](https://github.com/MoonGrt/STM32-Fly_C
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/MoonGrt/STM32-Fly_Control.svg?style=for-the-badge
-[contributors-url]: https://github.com/MoonGrt/STM32-Fly_Control/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/MoonGrt/STM32-Fly_Control.svg?style=for-the-badge
-[forks-url]: https://github.com/MoonGrt/STM32-Fly_Control/network/members
-[stars-shield]: https://img.shields.io/github/stars/MoonGrt/STM32-Fly_Control.svg?style=for-the-badge
-[stars-url]: https://github.com/MoonGrt/STM32-Fly_Control/stargazers
-[issues-shield]: https://img.shields.io/github/issues/MoonGrt/STM32-Fly_Control.svg?style=for-the-badge
-[issues-url]: https://github.com/MoonGrt/STM32-Fly_Control/issues
-[license-shield]: https://img.shields.io/github/license/MoonGrt/STM32-Fly_Control.svg?style=for-the-badge
-[license-url]: https://github.com/MoonGrt/STM32-Fly_Control/blob/master/LICENSE
+[contributors-shield]: https://img.shields.io/github/contributors/MoonGrt/STM32-Quadcopter.svg?style=for-the-badge
+[contributors-url]: https://github.com/MoonGrt/STM32-Quadcopter/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/MoonGrt/STM32-Quadcopter.svg?style=for-the-badge
+[forks-url]: https://github.com/MoonGrt/STM32-Quadcopter/network/members
+[stars-shield]: https://img.shields.io/github/stars/MoonGrt/STM32-Quadcopter.svg?style=for-the-badge
+[stars-url]: https://github.com/MoonGrt/STM32-Quadcopter/stargazers
+[issues-shield]: https://img.shields.io/github/issues/MoonGrt/STM32-Quadcopter.svg?style=for-the-badge
+[issues-url]: https://github.com/MoonGrt/STM32-Quadcopter/issues
+[license-shield]: https://img.shields.io/github/license/MoonGrt/STM32-Quadcopter.svg?style=for-the-badge
+[license-url]: https://github.com/MoonGrt/STM32-Quadcopter/blob/master/LICENSE
 
