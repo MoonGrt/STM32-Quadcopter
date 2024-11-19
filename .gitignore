@@ -1,4 +1,7 @@
 *.dbgconf
 *.map
 *.lst
-Software/Objects/*
+*.crf
+*.d
+*.o
+*.zip
