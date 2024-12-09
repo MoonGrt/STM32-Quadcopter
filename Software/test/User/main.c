@@ -10,6 +10,7 @@
 #include "delay.h"
 #include "W25Q64.h"
 #include "SPI.h"
+#include "NRF24L01.h"
 
 #undef SUCCESS
 #define SUCCESS 0
@@ -141,13 +142,10 @@ uint8_t ArrayWrite[] = {0x01, 0x02, 0x03, 0x04}; // 定义要写入数据的测试数组
 uint8_t ArrayRead[4];                            // 定义要读取数据的测试数组
 void W25Q64_Test(void)
 {
-    /*打印静态字符串*/
-    printf("MID:   DID:\n");
-
     /*打印ID号*/
     W25Q64_ReadID(&MID, &DID); // 获取W25Q64的ID号
-    printf("W: %02X\n", MID);
-    printf("R: %04X\n", DID);
+    printf("MID: %02X\n", MID);
+    printf("DID: %04X\n", DID);
 
     /*W25Q64功能函数测试*/
     W25Q64_SectorErase(0x000000);                // 扇区擦除
