@@ -9,6 +9,7 @@
 #include "control.h"
 #include "delay.h"
 #include "W25Q64.h"
+#include "SPI.h"
 
 #undef SUCCESS
 #define SUCCESS 0
@@ -75,43 +76,27 @@ void Init(void)
     NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2); // 2个bit的抢占优先级，2个bit的子优先级
 
     // 系统初始化
-    IIC_Init();       // I2C初始化
     pid_param_Init(); // PID参数初始化
+    LEDInit();        // LED闪灯初始化
+    // I2C 初始化
+    IIC_Init(); // I2C初始化
+    MpuInit();  // MPU6050初始
 
+    // USART 初始化
     USART1_Config(115200);
     USART3_Config(115200);
 
-    // LEDInit();		  // LED闪灯初始化
-    MpuInit(); // MPU6050初始
-    W25Q64_Init();
+    // SPI 初始化
+    SPI_INIT(); // SPI初始化
+    NRF24L01_init(); // 2.4G遥控通信初始化
+    W25Q64_Init();   // W25Q64初始化
 
+    // TIM 初始化
     // TIM2_PWM_Config(); // 4路PWM初始化
     // TIM3_Config(); // 系统工作周期初始化
 }
 
-uint8_t MID;                                     // 定义用于存放MID号的变量
-uint16_t DID;                                    // 定义用于存放DID号的变量
-uint8_t ArrayWrite[] = {0x01, 0x02, 0x03, 0x04}; // 定义要写入数据的测试数组
-uint8_t ArrayRead[4];                            // 定义要读取数据的测试数组
-void W25Q64_Test(void)
-{
-    /*打印静态字符串*/
-    printf("MID:   DID:\n");
-
-    /*打印ID号*/
-    W25Q64_ReadID(&MID, &DID); // 获取W25Q64的ID号
-    printf("W: %02X\n", MID);
-    printf("R: %04X\n", DID);
-
-    /*W25Q64功能函数测试*/
-    W25Q64_SectorErase(0x000000);                // 扇区擦除
-    W25Q64_PageProgram(0x000000, ArrayWrite, 4); // 将写入数据的测试数组写入到W25Q64中
-    W25Q64_ReadData(0x000000, ArrayRead, 4);     // 读取刚写入的测试数据到读取数据的测试数组中
-
-    /*打印数据*/
-    printf("W: %02X %02X %02X %02X\n", ArrayWrite[0], ArrayWrite[1], ArrayWrite[2], ArrayWrite[3]);
-    printf("R: %02X %02X %02X %02X\n", ArrayRead[0], ArrayRead[1], ArrayRead[2], ArrayRead[3]);
-}
+void W25Q64_Test(void);
 
 int main(void)
 {
@@ -148,4 +133,28 @@ int main(void)
 
         delay_ms(500);
     }
+}
+
+uint8_t MID;                                     // 定义用于存放MID号的变量
+uint16_t DID;                                    // 定义用于存放DID号的变量
+uint8_t ArrayWrite[] = {0x01, 0x02, 0x03, 0x04}; // 定义要写入数据的测试数组
+uint8_t ArrayRead[4];                            // 定义要读取数据的测试数组
+void W25Q64_Test(void)
+{
+    /*打印静态字符串*/
+    printf("MID:   DID:\n");
+
+    /*打印ID号*/
+    W25Q64_ReadID(&MID, &DID); // 获取W25Q64的ID号
+    printf("W: %02X\n", MID);
+    printf("R: %04X\n", DID);
+
+    /*W25Q64功能函数测试*/
+    W25Q64_SectorErase(0x000000);                // 扇区擦除
+    W25Q64_PageProgram(0x000000, ArrayWrite, 4); // 将写入数据的测试数组写入到W25Q64中
+    W25Q64_ReadData(0x000000, ArrayRead, 4);     // 读取刚写入的测试数据到读取数据的测试数组中
+
+    /*打印数据*/
+    printf("W: %02X %02X %02X %02X\n", ArrayWrite[0], ArrayWrite[1], ArrayWrite[2], ArrayWrite[3]);
+    printf("R: %02X %02X %02X %02X\n", ArrayRead[0], ArrayRead[1], ArrayRead[2], ArrayRead[3]);
 }

@@ -68,6 +68,19 @@ void USART1_Config(u32 bound)
     USART_ITConfig(USART1, USART_IT_RXNE, ENABLE);
     USART_Cmd(USART1, ENABLE);
 }
+
+void USART1_SendByte(const int8_t *Data, uint8_t len)
+{
+    uint8_t i;
+    for (i = 0; i < len; i++)
+    {
+        while (!(USART1->SR & USART_FLAG_TXE))
+            ; // while(USART_GetFlagStatus(USART1, USART_FLAG_TXE) == RESET)
+        USART_SendData(USART1, *(Data + i));
+    }
+}
+
+
 /*
  * 函数名：USART3_Config
  * 描述  ：USART3 GPIO 配置,工作模式配置。
@@ -117,17 +130,6 @@ void USART3_Config(u32 bound)
 
     USART_ITConfig(USART3, USART_IT_RXNE, ENABLE); // 开启中断
     USART_Cmd(USART3, ENABLE);                     // 使能串口
-}
-
-void USART1_SendByte(const int8_t *Data, uint8_t len)
-{
-    uint8_t i;
-    for (i = 0; i < len; i++)
-    {
-        while (!(USART1->SR & USART_FLAG_TXE))
-            ; // while(USART_GetFlagStatus(USART1, USART_FLAG_TXE) == RESET)
-        USART_SendData(USART1, *(Data + i));
-    }
 }
 
 void USART3_SendByte(const int8_t *Data, uint8_t len)

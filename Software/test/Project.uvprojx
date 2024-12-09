@@ -481,24 +481,14 @@
               <FilePath>.\System\USART.h</FilePath>
             </File>
             <File>
-              <FileName>Hard_SPI.c</FileName>
+              <FileName>SPI.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\System\Hard_SPI.c</FilePath>
+              <FilePath>.\System\SPI.c</FilePath>
             </File>
             <File>
-              <FileName>Hard_SPI.h</FileName>
+              <FileName>SPI.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\System\Hard_SPI.h</FilePath>
-            </File>
-            <File>
-              <FileName>Soft_SPI.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\System\Soft_SPI.c</FilePath>
-            </File>
-            <File>
-              <FileName>Soft_SPI.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\System\Soft_SPI.h</FilePath>
+              <FilePath>.\System\SPI.h</FilePath>
             </File>
           </Files>
         </Group>

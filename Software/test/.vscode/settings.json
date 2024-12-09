@@ -2,6 +2,8 @@
     "files.associations": {
         "Soft_SPI.h": "c",
         "stm32f10x.h": "c",
-        "w25q64.h": "c"
+        "w25q64.h": "c",
+        "hard_spi.h": "c",
+        "spi.h": "c"
     }
 }
