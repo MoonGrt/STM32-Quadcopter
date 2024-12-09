@@ -44,18 +44,15 @@ void pid_param_Init(void); //PID¿ØÖÆ²ÎÊý³õÊ¼»¯£¬¸ÄÐ´PID²¢²»»á±£´æÊý¾Ý£¬Çëµ÷ÊÔÍê³
 
 void ALL_Init(void)
 {
-
-
 	IIC_Init();             //I2C³õÊ¼»¯
-	
 	pid_param_Init();       //PID²ÎÊý³õÊ¼»¯
-	 
+	USART3_Config();        //ÉÏÎ»»ú´®¿Ú³õÊ¼»¯
+    printf("USART Init Success!\r\n");
+
 	LEDInit();              //LEDÉÁµÆ³õÊ¼»¯
 
 	MpuInit();              //MPU6050³õÊ¼»¯
 	
-	USART3_Config();        //ÉÏÎ»»ú´®¿Ú³õÊ¼»¯
-
 	NRF24L01_init();				//2.4GÒ£¿ØÍ¨ÐÅ³õÊ¼»¯
 	
 	TIM2_PWM_Config();			//4Â·PWM³õÊ¼»¯

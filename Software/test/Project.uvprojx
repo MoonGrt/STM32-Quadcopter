@@ -481,14 +481,24 @@
               <FilePath>.\System\USART.h</FilePath>
             </File>
             <File>
-              <FileName>SPI.c</FileName>
+              <FileName>Hard_SPI.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\System\SPI.c</FilePath>
+              <FilePath>.\System\Hard_SPI.c</FilePath>
             </File>
             <File>
-              <FileName>SPI.h</FileName>
+              <FileName>Hard_SPI.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\System\SPI.h</FilePath>
+              <FilePath>.\System\Hard_SPI.h</FilePath>
+            </File>
+            <File>
+              <FileName>Soft_SPI.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\System\Soft_SPI.c</FilePath>
+            </File>
+            <File>
+              <FileName>Soft_SPI.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\System\Soft_SPI.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -821,9 +831,9 @@
               <FilePath>.\Library\stm32f10x_spi.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f10x_spi.h</FileName>
+              <FileName>stm32f10x_Soft_SPI.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\Library\stm32f10x_spi.h</FilePath>
+              <FilePath>.\Library\stm32f10x_Soft_SPI.h</FilePath>
             </File>
             <File>
               <FileName>stm32f10x_tim.c</FileName>
