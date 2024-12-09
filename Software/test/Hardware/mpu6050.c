@@ -86,8 +86,8 @@ int8_t MpuInit(void) // ≥ı ºªØ
     date = IIC_Read_One_Byte(MPU6050_ADDRESS, 0x75);
     if (date != MPU6050_PRODUCT_ID)
     {
-        printf("Read MPU6050 ID: %d\r\n", date);
-        printf("MPU6050 init failed\r\n");
+//        printf("Read MPU6050 ID: %d\r\n", date);
+//        printf("MPU6050 init failed\r\n");
         return FAILED;
     }
     else

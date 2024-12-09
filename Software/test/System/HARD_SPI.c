@@ -1,17 +1,6 @@
 #include "stm32f10x.h" // Device header
 
 /**
- * 函    数：SPI写SS引脚电平，SS仍由软件模拟
- * 参    数：BitValue 协议层传入的当前需要写入SS的电平，范围0~1
- * 返 回 值：无
- * 注意事项：此函数需要用户实现内容，当BitValue为0时，需要置SS为低电平，当BitValue为1时，需要置SS为高电平
- */
-void Hard_SPI_W_SS(uint8_t BitValue)
-{
-    GPIO_WriteBit(GPIOA, GPIO_Pin_8, (BitAction)BitValue); // 根据BitValue，设置SS引脚的电平
-}
-
-/**
  * 函    数：SPI初始化
  * 参    数：无
  * 返 回 值：无
@@ -55,29 +44,6 @@ void Hard_SPI_Init(void)
 
     /*SPI使能*/
     SPI_Cmd(SPI2, ENABLE); // 使能SPI2，开始运行
-
-    /*设置默认电平*/
-    Hard_SPI_W_SS(1); // SS默认高电平
-}
-
-/**
- * 函    数：SPI起始
- * 参    数：无
- * 返 回 值：无
- */
-void Hard_SPI_Start(void)
-{
-    Hard_SPI_W_SS(0); // 拉低SS，开始时序
-}
-
-/**
- * 函    数：SPI终止
- * 参    数：无
- * 返 回 值：无
- */
-void Hard_SPI_Stop(void)
-{
-    Hard_SPI_W_SS(1); // 拉高SS，终止时序
 }
 
 /**

@@ -13,6 +13,7 @@
 ".\objects\led.o"
 ".\objects\mpu6050.o"
 ".\objects\w25q64.o"
+".\objects\nrf24l01.o"
 ".\objects\filter.o"
 ".\objects\imu.o"
 ".\objects\kalman.o"

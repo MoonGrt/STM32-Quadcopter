@@ -27,10 +27,15 @@ void SPI_Config(void)
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB | RCC_APB2Periph_AFIO, ENABLE);
     GPIO_SetBits(GPIOB, GPIO_Pin_12); // NRF_CS预置为高
 
-    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15;
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_13 | GPIO_Pin_15;
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;
     GPIO_Init(GPIOB, &GPIO_InitStructure);
+
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_14;
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+    GPIO_Init(GPIOB, &GPIO_InitStructure); // 将PA6引脚初始化为上拉输入
 
     /* SPI2 configuration */
     SPI_Cmd(SPI2, DISABLE); // 必须先禁能,才能改变MODE
@@ -49,8 +54,11 @@ void SPI_Config(void)
     /* SPI2 enable */
     SPI_Cmd(SPI2, ENABLE);
 }
+
 u8 SPI_RW(u8 dat)
 {
+    u16 temp;
+
     /* Loop while DR register in not emplty */
     while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_TXE) == RESET)
         ;
@@ -63,5 +71,8 @@ u8 SPI_RW(u8 dat)
         ;
 
     /* Return the byte read from the SPI bus */
+    // temp = SPI_I2S_ReceiveData(SPI2);
+    // printf("%x, %x\n", dat, temp);
+    // return temp;
     return SPI_I2S_ReceiveData(SPI2);
 }
