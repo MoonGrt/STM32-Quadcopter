@@ -64,17 +64,17 @@
 
 typedef struct
 {
-	uint16_t FlashTime;
-	enum
-	{
-		AlwaysOn,
-		AlwaysOff,
-		AllFlashLight,
-		AlternateFlash,
-		WARNING,
-		DANGEROURS,
-		GET_OFFSET
-	} status;
+    uint16_t FlashTime;
+    enum
+    {
+        AlwaysOn,
+        AlwaysOff,
+        AllFlashLight,
+        AlternateFlash,
+        WARNING,
+        DANGEROURS,
+        GET_OFFSET
+    } status;
 } sLED;
 
 extern sLED LED;
@@ -85,11 +85,11 @@ extern void PilotLED(void);
 #define LED_TAKE_OFF_ENTER LED.status = WARNING
 #define LED_TAKE_OFF_EXIT LED.status = AllFlashLight
 #define LED_HEIGHT_LOCK_ENTER \
-	LED.FlashTime = 100;      \
-	LED.status = AlternateFlash
+    LED.FlashTime = 100;      \
+    LED.status = AlternateFlash
 #define LED_HEIGHT_LOCK_EXIT \
-	LED.FlashTime = 200;     \
-	LED.status = AllFlashLight
+    LED.FlashTime = 200;     \
+    LED.status = AllFlashLight
 #define LED_3D_ROLL_ENTER LED.status = WARNING
 #define LED_3D_ROLL_EXIT LED.status = AllFlashLight
 #define LED_SAFTY_TAKE_DOWN_ENTER LED.status = DANGEROURS

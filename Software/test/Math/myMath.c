@@ -44,32 +44,32 @@ const float Gyro_Gr = 0.0005326f * 2; // 面计算度每秒,转换弧度每秒则 2*0.0305175
 #ifndef TAPYOR
 float sine(float x) // (-M_PI , M_PI) ???? 0.0005
 {
-	const float Q = 0.775;
-	const float P = 0.225;
-	const float B = 4 / M_PI;
-	const float C = -4 / (M_PI * M_PI);
-	float y = B * x + C * x * fabs(x);
-	return (Q * y + P * y * fabs(y));
+    const float Q = 0.775;
+    const float P = 0.225;
+    const float B = 4 / M_PI;
+    const float C = -4 / (M_PI * M_PI);
+    float y = B * x + C * x * fabs(x);
+    return (Q * y + P * y * fabs(y));
 }
 #else
 // 4级泰勒公式法 在PI出会出现0.7的最大误差
 // sinx= x- x^3/3! + x^5/5! - x^7/7!+ x^9/9! . =?(-1)^n x^(2n+1)/(2n+1)!
 float sine(float x)
 {
-	float t = x;
-	float result = x;
-	float X2 = x * x;
-	uint8_t cnt = 1;
+    float t = x;
+    float result = x;
+    float X2 = x * x;
+    uint8_t cnt = 1;
 
-	do
-	{
-		t = -t;
-		t *= X2;
-		result += t / ((cnt << 1) + 1);
-		cnt++;
-	} while (cnt < 5); // 6阶
+    do
+    {
+        t = -t;
+        t *= X2;
+        result += t / ((cnt << 1) + 1);
+        cnt++;
+    } while (cnt < 5); // 6阶
 
-	return result;
+    return result;
 }
 #endif
 
@@ -78,25 +78,25 @@ float sine(float x)
 // cos(x-M_PI/2)=sin(x)
 float cosine(float x)
 {
-	return sine(x + M_PI / 2); // 奇变偶不变，符号看象限
+    return sine(x + M_PI / 2); // 奇变偶不变，符号看象限
 }
 
 // 反正切麦克劳林展开式 阶数越高，值越准确   70°以内是准确的
 // http://www.zybang.com/question/246f9997776f7d5cc636b10aff27a1cb.html
 float arctan(float x) //  (-1 , +1)    6? ?? 0.002958
 {
-	float t = x;
-	float result = 0;
-	float X2 = x * x;
-	unsigned char cnt = 1;
-	do
-	{
-		result += t / ((cnt << 1) - 1);
-		t = -t;
-		t *= X2;
-		cnt++;
-	} while (cnt <= 6); // 5??
-	return result;
+    float t = x;
+    float result = 0;
+    float X2 = x * x;
+    unsigned char cnt = 1;
+    do
+    {
+        result += t / ((cnt << 1) - 1);
+        t = -t;
+        t *= X2;
+        cnt++;
+    } while (cnt <= 6); // 5??
+    return result;
 }
 
 // 反正弦麦克劳林展开式 -1<x<+1     42°以内是准确的
@@ -104,37 +104,37 @@ float arctan(float x) //  (-1 , +1)    6? ?? 0.002958
 const float PI_2 = 1.570796f;
 float arcsin(float x) //(-1 , +1)  ? 0 ????  6? ??0.005
 {
-	float d = 1;
-	float t = x;
-	unsigned char cnt = 1;
-	float result = 0;
-	float X2 = x * x;
+    float d = 1;
+    float t = x;
+    unsigned char cnt = 1;
+    float result = 0;
+    float X2 = x * x;
 
-	if (x >= 1.0f)
-		return PI_2;
-	if (x <= -1.0f)
-		return -PI_2;
-	do
-	{
-		result += t / (d * ((cnt << 1) - 1));
-		t *= X2 * ((cnt << 1) - 1); //
-		d *= (cnt << 1);			// 2 4 6 8 10 ...
-		cnt++;
-	} while (cnt <= 6);
+    if (x >= 1.0f)
+        return PI_2;
+    if (x <= -1.0f)
+        return -PI_2;
+    do
+    {
+        result += t / (d * ((cnt << 1) - 1));
+        t *= X2 * ((cnt << 1) - 1); //
+        d *= (cnt << 1);            // 2 4 6 8 10 ...
+        cnt++;
+    } while (cnt <= 6);
 
-	return result;
+    return result;
 }
 
 // 保证输入值是有效的
 float safe_asin(float v)
 {
-	if (isnan(v))
-		return 0.0;
-	if (v >= 1.0f)
-		return M_PI / 2;
-	if (v <= -1.0f)
-		return -M_PI / 2;
-	return asinf(v);
+    if (isnan(v))
+        return 0.0;
+    if (v >= 1.0f)
+        return M_PI / 2;
+    if (v <= -1.0f)
+        return -M_PI / 2;
+    return asinf(v);
 }
 
 /*====================================================================================================*/
@@ -148,17 +148,17 @@ float safe_asin(float v)
 /*====================================================================================================*/
 float Q_rsqrt(float number)
 {
-	long i;
-	float x2, y;
-	const float threehalfs = 1.5F;
+    long i;
+    float x2, y;
+    const float threehalfs = 1.5F;
 
-	x2 = number * 0.5F;
-	y = number;
-	i = *(long *)&y;
-	i = 0x5f3759df - (i >> 1);
-	y = *(float *)&i;
-	y = y * (threehalfs - (x2 * y * y)); // 1st iteration （第一次牛顿迭代）
-	return y;
+    x2 = number * 0.5F;
+    y = number;
+    i = *(long *)&y;
+    i = 0x5f3759df - (i >> 1);
+    y = *(float *)&i;
+    y = y * (threehalfs - (x2 * y * y)); // 1st iteration （第一次牛顿迭代）
+    return y;
 }
 
 /**************************实现函数********************************************
@@ -170,15 +170,15 @@ float Q_rsqrt(float number)
 *******************************************************************************/
 void array_astrict(int16_t *array, int16_t lower, int16_t upper)
 {
-	int16_t length = sizeof(array);
-	uint16_t i = 0;
-	for (i = 0; i < length; i++)
-	{
-		if (*(array + i) < lower)
-			*(array + i) = lower;
-		else if (*(array + i) > upper)
-			*(array + i) = upper;
-	}
+    int16_t length = sizeof(array);
+    uint16_t i = 0;
+    for (i = 0; i < length; i++)
+    {
+        if (*(array + i) < lower)
+            *(array + i) = lower;
+        else if (*(array + i) > upper)
+            *(array + i) = upper;
+    }
 }
 
 /**************************实现函数********************************************
@@ -190,10 +190,10 @@ void array_astrict(int16_t *array, int16_t lower, int16_t upper)
 *******************************************************************************/
 void array_assign(int16_t *array, int16_t value)
 {
-	uint16_t length = sizeof(array);
-	uint16_t i = 0;
-	for (i = 0; i < length; i++)
-		*(array + i) = value;
+    uint16_t length = sizeof(array);
+    uint16_t i = 0;
+    for (i = 0; i < length; i++)
+        *(array + i) = value;
 }
 
 /**************************实现函数********************************************
@@ -206,11 +206,11 @@ void array_assign(int16_t *array, int16_t value)
 *******************************************************************************/
 float data_limit(float data, float toplimit, float lowerlimit)
 {
-	if (data > toplimit)
-		data = toplimit;
-	else if (data < lowerlimit)
-		data = lowerlimit;
-	return data;
+    if (data > toplimit)
+        data = toplimit;
+    else if (data < lowerlimit)
+        data = lowerlimit;
+    return data;
 }
 
 /***********************************************
@@ -220,44 +220,44 @@ float data_limit(float data, float toplimit, float lowerlimit)
  ************************************************/
 float VariableParameter(float error)
 {
-	float result = 0;
+    float result = 0;
 
-	if (error < 0)
-		error = -error;
-	if (error > 0.6f)
-		error = 0.6f;
-	result = 1 - 1.667f * error;
-	if (result < 0)
-		result = 0;
-	return result;
+    if (error < 0)
+        error = -error;
+    if (error > 0.6f)
+        error = 0.6f;
+    result = 1 - 1.667f * error;
+    if (result < 0)
+        result = 0;
+    return result;
 }
 
 float middle_3(float input) // 3个数取中间的数
 {
-	int a, b, c, t;
+    int a, b, c, t;
 
-	if (a < b)
-	{
-		t = a;
-		a = b;
-		b = t;
-	}
+    if (a < b)
+    {
+        t = a;
+        a = b;
+        b = t;
+    }
 
-	if (b < c) // 9 8 7
-	{
-		t = b;
-		b = c;
-		c = t;
-	}
+    if (b < c) // 9 8 7
+    {
+        t = b;
+        b = c;
+        c = t;
+    }
 
-	if (a < b) // 9 8 7
-	{
-		t = a;
-		a = b;
-		b = t;
-	}
+    if (a < b) // 9 8 7
+    {
+        t = a;
+        a = b;
+        b = t;
+    }
 
-	return b;
+    return b;
 }
 
 /**************************实现函数********************************************
@@ -279,31 +279,31 @@ float middle_3(float input) // 3个数取中间的数
 
 float my_deathzoom_2(float x, float zoom)
 {
-	float t;
+    float t;
 
-	if (x > -zoom && x < zoom)
-		t = 0;
-	else
-		t = x;
-	return (t);
+    if (x > -zoom && x < zoom)
+        t = 0;
+    else
+        t = x;
+    return (t);
 }
 
 float my_deathzoom(float x, float zoom)
 {
-	float t;
-	if (x > 0)
-	{
-		t = x - zoom;
-		if (t < 0)
-			t = 0;
-	}
-	else
-	{
-		t = x + zoom;
-		if (t > 0)
-			t = 0;
-	}
-	
-	return (t);
+    float t;
+    if (x > 0)
+    {
+        t = x - zoom;
+        if (t < 0)
+            t = 0;
+    }
+    else
+    {
+        t = x + zoom;
+        if (t > 0)
+            t = 0;
+    }
+
+    return (t);
 }
 /******************* (C) COPYRIGHT 2012 WildFire Team *****END OF FILE************/

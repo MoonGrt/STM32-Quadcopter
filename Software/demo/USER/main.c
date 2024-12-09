@@ -31,17 +31,7 @@ int main(void)
 
 	while(1)
 	{
-		  ANTO_polling(); 	//匿名上位机
+//		  ANTO_polling(); 	//匿名上位机
 			PilotLED(); 			//LED刷新
 	}
 }
-
-
-
-
-
-
-
-
-
-

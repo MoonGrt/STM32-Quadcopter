@@ -49,6 +49,6 @@
 ".\output\mymath.o"
 ".\output\pid.o"
 --library_type=microlib --strict --scatter ".\Output\FJCX.sct"
---summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list ".\List\FJCX.map" -o .\Output\FJCX.axf

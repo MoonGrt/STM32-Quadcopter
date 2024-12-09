@@ -11,9 +11,9 @@
 /*  LPF 1st filter   */
 typedef struct
 {
-	float old_data;
-	float new_data;
-	float factor;
+    float old_data;
+    float new_data;
+    float factor;
 } Filter_LPF_1;
 
 extern float LPF_1_Filter_1(Filter_LPF_1 *LPF_1);
@@ -21,10 +21,10 @@ extern float LPF_1_Filter_2(Filter_LPF_1 *LPF_1, float dt);
 
 typedef struct
 {
-	uint16_t cnt;
-	uint16_t input;
-	uint16_t *average;
-	uint8_t max_cnt;
+    uint16_t cnt;
+    uint16_t input;
+    uint16_t *average;
+    uint8_t max_cnt;
 } MovAverage;
 
 extern uint16_t AntiPulse_MovingAverage_Filter(MovAverage *_MovAverage);
