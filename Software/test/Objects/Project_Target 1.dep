@@ -1,5 +1,5 @@
 Dependencies for Project 'Project', Target 'Target 1': (DO NOT MODIFY !)
-F (.\User\main.c)(0x67568F8E)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Start -I .\User -I .\Library -I .\Hardware -I .\System -I .\Math-I.\RTE\_Target_1-IS:\DevTools\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-IS:\DevTools\Keil\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (.\User\main.c)(0x6756A1B8)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Start -I .\User -I .\Library -I .\Hardware -I .\System -I .\Math-I.\RTE\_Target_1-IS:\DevTools\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-IS:\DevTools\Keil\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (.\Start\stm32f10x.h)(0x4D783CB4)
 I (.\Start\core_cm3.h)(0x4D523B58)
 I (S:\DevTools\Keil\ARM\ARMCC\include\stdint.h)(0x588B8344)
@@ -43,6 +43,7 @@ I (User\control.h)(0x675687EF)
 I (.\Math\myMath.h)(0x6756882B)
 I (.\Math\pid.h)(0x67568831)
 I (S:\DevTools\Keil\ARM\ARMCC\include\stdbool.h)(0x588B8344)
+I (.\Hardware\W25Q64.h)(0x6756A0EE)
 F (.\User\ALL_DATA.h)(0x675687E1)()
 F (.\User\ANO_DT.c)(0x67568840)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Start -I .\User -I .\Library -I .\Hardware -I .\System -I .\Math-I.\RTE\_Target_1-IS:\DevTools\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-IS:\DevTools\Keil\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\ano_dt.o --omf_browse .\objects\ano_dt.crf --depend .\objects\ano_dt.d)
 I (S:\DevTools\Keil\ARM\ARMCC\include\stdlib.h)(0x588B8344)
@@ -312,6 +313,36 @@ I (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)
 I (.\Library\misc.h)(0x4D783BB4)
 I (S:\DevTools\Keil\ARM\ARMCC\include\stdio.h)(0x588B8344)
 F (.\System\USART.h)(0x675687D5)()
+F (.\System\SPI.c)(0x6756A223)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Start -I .\User -I .\Library -I .\Hardware -I .\System -I .\Math-I.\RTE\_Target_1-IS:\DevTools\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-IS:\DevTools\Keil\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\spi.o --omf_browse .\objects\spi.crf --depend .\objects\spi.d)
+I (.\Start\stm32f10x.h)(0x4D783CB4)
+I (.\Start\core_cm3.h)(0x4D523B58)
+I (S:\DevTools\Keil\ARM\ARMCC\include\stdint.h)(0x588B8344)
+I (.\Start\system_stm32f10x.h)(0x4D783CAA)
+I (.\User\stm32f10x_conf.h)(0x4D99A59E)
+I (.\Library\stm32f10x_adc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_bkp.h)(0x4D783BB4)
+I (.\Library\stm32f10x_can.h)(0x4D783BB4)
+I (.\Library\stm32f10x_cec.h)(0x4D783BB4)
+I (.\Library\stm32f10x_crc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dac.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dbgmcu.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dma.h)(0x4D783BB4)
+I (.\Library\stm32f10x_exti.h)(0x4D783BB4)
+I (.\Library\stm32f10x_flash.h)(0x4D783BB4)
+I (.\Library\stm32f10x_fsmc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_gpio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_i2c.h)(0x4D783BB4)
+I (.\Library\stm32f10x_iwdg.h)(0x4D783BB4)
+I (.\Library\stm32f10x_pwr.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rcc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rtc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_sdio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_spi.h)(0x4D783BB4)
+I (.\Library\stm32f10x_tim.h)(0x4D783BB4)
+I (.\Library\stm32f10x_usart.h)(0x4D783BB4)
+I (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)
+I (.\Library\misc.h)(0x4D783BB4)
+F (.\System\SPI.h)(0x6756A0E1)()
 F (.\Hardware\LED.c)(0x67568807)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Start -I .\User -I .\Library -I .\Hardware -I .\System -I .\Math-I.\RTE\_Target_1-IS:\DevTools\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-IS:\DevTools\Keil\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\led.o --omf_browse .\objects\led.crf --depend .\objects\led.d)
 I (.\Start\stm32f10x.h)(0x4D783CB4)
 I (.\Start\core_cm3.h)(0x4D523B58)
@@ -383,6 +414,39 @@ I (Hardware\LED.h)(0x67568809)
 I (.\Math\myMath.h)(0x6756882B)
 I (.\Math\kalman.h)(0x67568825)
 F (.\Hardware\mpu6050.h)(0x6756880E)()
+F (.\Hardware\W25Q64.c)(0x6756A0E3)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Start -I .\User -I .\Library -I .\Hardware -I .\System -I .\Math-I.\RTE\_Target_1-IS:\DevTools\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-IS:\DevTools\Keil\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\w25q64.o --omf_browse .\objects\w25q64.crf --depend .\objects\w25q64.d)
+I (.\Start\stm32f10x.h)(0x4D783CB4)
+I (.\Start\core_cm3.h)(0x4D523B58)
+I (S:\DevTools\Keil\ARM\ARMCC\include\stdint.h)(0x588B8344)
+I (.\Start\system_stm32f10x.h)(0x4D783CAA)
+I (.\User\stm32f10x_conf.h)(0x4D99A59E)
+I (.\Library\stm32f10x_adc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_bkp.h)(0x4D783BB4)
+I (.\Library\stm32f10x_can.h)(0x4D783BB4)
+I (.\Library\stm32f10x_cec.h)(0x4D783BB4)
+I (.\Library\stm32f10x_crc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dac.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dbgmcu.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dma.h)(0x4D783BB4)
+I (.\Library\stm32f10x_exti.h)(0x4D783BB4)
+I (.\Library\stm32f10x_flash.h)(0x4D783BB4)
+I (.\Library\stm32f10x_fsmc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_gpio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_i2c.h)(0x4D783BB4)
+I (.\Library\stm32f10x_iwdg.h)(0x4D783BB4)
+I (.\Library\stm32f10x_pwr.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rcc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rtc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_sdio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_spi.h)(0x4D783BB4)
+I (.\Library\stm32f10x_tim.h)(0x4D783BB4)
+I (.\Library\stm32f10x_usart.h)(0x4D783BB4)
+I (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)
+I (.\Library\misc.h)(0x4D783BB4)
+I (.\System\spi.h)(0x6756A0E1)
+I (Hardware\W25Q64_Ins.h)(0x6756A0EB)
+F (.\Hardware\W25Q64.h)(0x6756A0EE)()
+F (.\Hardware\W25Q64_Ins.h)(0x6756A0EB)()
 F (.\Math\filter.c)(0x67568815)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Start -I .\User -I .\Library -I .\Hardware -I .\System -I .\Math-I.\RTE\_Target_1-IS:\DevTools\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-IS:\DevTools\Keil\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\filter.o --omf_browse .\objects\filter.crf --depend .\objects\filter.d)
 I (S:\DevTools\Keil\ARM\ARMCC\include\string.h)(0x588B8344)
 I (Math\filter.h)(0x67568818)

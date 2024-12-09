@@ -8,6 +8,7 @@
 #include "Remote.h"
 #include "control.h"
 #include "delay.h"
+#include "W25Q64.h"
 
 #undef SUCCESS
 #define SUCCESS 0
@@ -82,15 +83,42 @@ void Init(void)
 
     // LEDInit();		  // LED闪灯初始化
     MpuInit(); // MPU6050初始
+    W25Q64_Init();
 
     // TIM2_PWM_Config(); // 4路PWM初始化
     // TIM3_Config(); // 系统工作周期初始化
+}
+
+uint8_t MID;                                     // 定义用于存放MID号的变量
+uint16_t DID;                                    // 定义用于存放DID号的变量
+uint8_t ArrayWrite[] = {0x01, 0x02, 0x03, 0x04}; // 定义要写入数据的测试数组
+uint8_t ArrayRead[4];                            // 定义要读取数据的测试数组
+void W25Q64_Test(void)
+{
+    /*打印静态字符串*/
+    printf("MID:   DID:\n");
+
+    /*打印ID号*/
+    W25Q64_ReadID(&MID, &DID); // 获取W25Q64的ID号
+    printf("W: %02X\n", MID);
+    printf("R: %04X\n", DID);
+
+    /*W25Q64功能函数测试*/
+    W25Q64_SectorErase(0x000000);                // 扇区擦除
+    W25Q64_PageProgram(0x000000, ArrayWrite, 4); // 将写入数据的测试数组写入到W25Q64中
+    W25Q64_ReadData(0x000000, ArrayRead, 4);     // 读取刚写入的测试数据到读取数据的测试数组中
+
+    /*打印数据*/
+    printf("W: %02X %02X %02X %02X\n", ArrayWrite[0], ArrayWrite[1], ArrayWrite[2], ArrayWrite[3]);
+    printf("R: %02X %02X %02X %02X\n", ArrayRead[0], ArrayRead[1], ArrayRead[2], ArrayRead[3]);
 }
 
 int main(void)
 {
     // 系统初始化
     Init();
+
+    W25Q64_Test(); // W25Q64测试
 
     while (1)
     {

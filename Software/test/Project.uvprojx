@@ -480,6 +480,16 @@
               <FileType>5</FileType>
               <FilePath>.\System\USART.h</FilePath>
             </File>
+            <File>
+              <FileName>SPI.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\System\SPI.c</FilePath>
+            </File>
+            <File>
+              <FileName>SPI.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\System\SPI.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -504,6 +514,21 @@
               <FileName>mpu6050.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Hardware\mpu6050.h</FilePath>
+            </File>
+            <File>
+              <FileName>W25Q64.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Hardware\W25Q64.c</FilePath>
+            </File>
+            <File>
+              <FileName>W25Q64.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Hardware\W25Q64.h</FilePath>
+            </File>
+            <File>
+              <FileName>W25Q64_Ins.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Hardware\W25Q64_Ins.h</FilePath>
             </File>
           </Files>
         </Group>
