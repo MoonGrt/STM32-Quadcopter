@@ -22,7 +22,7 @@ const uint8_t RX_ADDRESS[] = {0x11, 0x22, 0x33, 0x44, 0x55}; // 接收地址RX_ADDR_
 #define Clr_NRF24L01_CSN (GPIOB->BRR = GPIO_Pin_12)  // PB12
 #define Set_NRF24L01_CE (GPIOA->BSRR = GPIO_Pin_11)  // PB1
 #define Clr_NRF24L01_CE (GPIOA->BRR = GPIO_Pin_11)   // PB1
-#define READ_NRF24L01_IRQ (GPIOA->IDR & GPIO_Pin_12) // IRQ主机数据输入 PB0
+#define Read_NRF24L01_IRQ (GPIOA->IDR & GPIO_Pin_12) // IRQ主机数据输入 PB0
 
 // 初始化24L01的IO口
 void NRF24L01_Configuration(void)
@@ -132,7 +132,7 @@ u8 NRF24L01_TxPacket(u8 *txbuf)
     Clr_NRF24L01_CE;
     NRF24L01_Write_Buf(WR_TX_PLOAD, txbuf, TX_PLOAD_WIDTH); // 写数据到TX BUF  32个字节
     Set_NRF24L01_CE;                                        // 启动发送
-    while (READ_NRF24L01_IRQ != 0)
+    while (Read_NRF24L01_IRQ != 0)
         ;                                              // 等待发送完成
     state = NRF24L01_Read_Reg(STATUS);                 // 读取状态寄存器的值
     NRF24L01_Write_Reg(SPI_WRITE_REG + STATUS, state); // 清除TX_DS或MAX_RT中断标志
@@ -221,6 +221,7 @@ void TX_Mode(void)
 
 void NRF24L01_init(void)
 {
+    // GPIO 初始化
     GPIO_InitTypeDef GPIO_InitStructure;
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE); // 使能GPIO的时钟 CE
     GPIO_InitStructure.GPIO_Pin = GPIO_Pin_11;            // NRF24L01
