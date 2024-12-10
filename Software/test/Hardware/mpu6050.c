@@ -35,7 +35,6 @@
 
 // #define   MPU6050_is_DRY()      GPIO_ReadOutBit(HT_GPIOC, GPIO_PIN_0)//IRQ主机数据输入
 #ifdef USE_I2C_HARDWARE
-
 #define MPU6050_ADDRESS 0xD0 // 0x68
 #else
 #define MPU6050_ADDRESS 0xD0 // IIC写入时的地址字节数据，+1为读取
@@ -79,15 +78,14 @@ int8_t MpuInit(void) // 初始化
         date += IIC_Write_One_Byte(MPU6050_ADDRESS, SMPLRT_DIV, 0x02);   // 陀螺仪采样率，0x00(500Hz)
         date += IIC_Write_One_Byte(MPU6050_ADDRESS, PWR_MGMT_1, 0x03);   // 设置设备时钟源，陀螺仪Z轴
         date += IIC_Write_One_Byte(MPU6050_ADDRESS, CONFIGL, 0x03);      // 低通滤波频率，0x03(42Hz)
-        date += IIC_Write_One_Byte(MPU6050_ADDRESS, GYRO_CONFIG, 0x18);  //+-2000deg/s
-        date += IIC_Write_One_Byte(MPU6050_ADDRESS, ACCEL_CONFIG, 0x09); //+-4G
-
+        date += IIC_Write_One_Byte(MPU6050_ADDRESS, GYRO_CONFIG, 0x18);  // +-2000deg/s
+        date += IIC_Write_One_Byte(MPU6050_ADDRESS, ACCEL_CONFIG, 0x09); // +-4G
     } while (date != SUCCESS);
     date = IIC_Read_One_Byte(MPU6050_ADDRESS, 0x75);
     if (date != MPU6050_PRODUCT_ID)
     {
-        // printf("Read MPU6050 ID: %d\r\n", date);
-        // printf("MPU6050 init failed\r\n");
+        printf("Read MPU6050 ID: %d\r\n", date);
+        printf("MPU6050 init failed\r\n");
         return FAILED;
     }
     else

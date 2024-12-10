@@ -1,12 +1,3 @@
-/******************** (C) COPYRIGHT 2013 YunMiao ********************
- * File Name          : main.c
- * Author             : YunMiao
- * Version            : V2.0.1
- * Date               : 08/01/20013
- * Description        : IIC basic function
- ********************************************************************************
- ********************************************************************************
- *******************************aircraft****************************************/
 #include "i2c.h"
 
 #undef SUCCESS
@@ -33,12 +24,12 @@
  ******************************************************************************/
 void IIC_Init(void)
 {
-    GPIO_InitTypeDef GPIO_InitStrucSUCCESS;
-    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
-    GPIO_InitStrucSUCCESS.GPIO_Pin = SCL_PIN | SDA_PIN;
-    GPIO_InitStrucSUCCESS.GPIO_Speed = GPIO_Speed_50MHz;
-    GPIO_InitStrucSUCCESS.GPIO_Mode = GPIO_Mode_Out_OD;
-    GPIO_Init(IIC_GPIO, &GPIO_InitStrucSUCCESS);
+    GPIO_InitTypeDef GPIO_InitStructure;
+    RCC_APB2PeriphClockCmd(IIC_RCC, ENABLE);
+    GPIO_InitStructure.GPIO_Pin = SCL_PIN | SDA_PIN;
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_OD;
+    GPIO_Init(IIC_GPIO, &GPIO_InitStructure);
 }
 
 /******************************************************************************
@@ -171,6 +162,13 @@ static void I2c_SendByte(uint8_t byte)
     }
     SCL_L;
 }
+void I2C_Test(void)
+{
+    while(1)
+    {
+        I2c_SendByte(0x58);
+    }
+}
 
 /******************************************************************************
  * º¯ÊýÃû³Æ: I2c_ReadByte
@@ -200,6 +198,7 @@ static uint8_t I2c_ReadByte(void)
         }
     }
     SCL_L;
+    printf("byte = %d\r\n", byte);
     return byte;
 }
 

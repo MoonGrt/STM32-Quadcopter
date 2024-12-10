@@ -12,6 +12,7 @@
 #include "SPI.h"
 #include "NRF24L01.h"
 #include "SPL06.h"
+#include "I2C.h"
 
 #undef SUCCESS
 #define SUCCESS 0
@@ -102,16 +103,20 @@ void Init(void)
 
 void MPU6050_Test(void);
 void SPL06_Test(void);
+void NRF24L01_Test(void);
 void W25Q64_Test(void);
+// void I2C_Test(void);
 
 int main(void)
 {
     // 系统初始化
     Init();
 
-    MPU6050_Test(); // MPU6050测试
-    SPL06_Test();  // SPL06测试
-    W25Q64_Test(); // W25Q64测试
+    MPU6050_Test();  // MPU6050测试
+    SPL06_Test();    // SPL06测试
+    NRF24L01_Test(); // 2.4G遥控通信测试
+    W25Q64_Test();   // W25Q64测试
+    I2C_Test();      // I2C测试
 
     while (1)
     {
@@ -140,6 +145,10 @@ void SPL06_Test(void)
     spl06_get_result(&spl06_result);
     // printf("Praw: %d, Traw: %d\n", spl06_result.Praw, spl06_result.Traw);
     printf("Pcomp: %.2f, Tcomp: %.2f\n", spl06_result.Pcomp, spl06_result.Tcomp);
+}
+
+void NRF24L01_Test(void)
+{
 }
 
 uint8_t MID;                                     // 定义用于存放MID号的变量

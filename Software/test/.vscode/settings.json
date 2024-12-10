@@ -5,6 +5,8 @@
         "w25q64.h": "c",
         "hard_spi.h": "c",
         "spi.h": "c",
-        "spl06.h": "c"
+        "spl06.h": "c",
+        "all_data.h": "c",
+        "i2c.h": "c"
     }
 }

@@ -38,13 +38,14 @@
 /*====================================================================================================*/
 // PB6 SCL
 // PB7 SDA
-// return 0:success   1:failed
+// return 0:success 1:failed
 extern void IIC_Init(void);
 //----------------------------------------------------------------------
 extern int8_t IIC_Write_One_Byte(uint8_t addr, uint8_t reg, uint8_t data);
 extern int8_t IIC_Read_One_Byte(uint8_t addr, uint8_t reg);
 extern int8_t IIC_Write_Bytes(uint8_t addr, uint8_t reg, uint8_t *data, uint8_t len);
 extern int8_t IIC_read_Bytes(uint8_t addr, uint8_t reg, uint8_t *data, uint8_t len);
+void I2C_Test(void);
 //----------------------------------------------------------------------f
 
 /*====================================================================================================*/
