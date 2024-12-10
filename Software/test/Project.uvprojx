@@ -535,6 +535,16 @@
               <FileType>5</FileType>
               <FilePath>.\Hardware\nrf24l01.h</FilePath>
             </File>
+            <File>
+              <FileName>SPL06.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Hardware\SPL06.c</FilePath>
+            </File>
+            <File>
+              <FileName>SPL06.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Hardware\SPL06.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

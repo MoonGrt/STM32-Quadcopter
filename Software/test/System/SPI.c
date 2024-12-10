@@ -74,7 +74,7 @@ void SPI_INIT(void)
 {
     /*开启时钟*/
     RCC_APB2PeriphClockCmd(SPI_PIN_RCC, ENABLE);  // 开启 SPI 的时钟
-    RCC_APB1PeriphClockCmd(HARD_SPI_RCC, ENABLE); // 开启HARD_SPI的时钟
+    RCC_APB1PeriphClockCmd(HARD_SPI_RCC, ENABLE); // 开启 HARD_SPI 的时钟
 
     /*GPIO初始化*/
     GPIO_InitTypeDef GPIO_InitStructure;

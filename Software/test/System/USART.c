@@ -94,7 +94,8 @@ void USART3_Config(u32 bound)
     USART_InitTypeDef USART_InitStructure;
     NVIC_InitTypeDef NVIC_InitStructure;
     /* ≈‰÷√¥Æø⁄3 £®USART3£©  ±÷”*/
-    RCC_APB1PeriphClockCmd(RCC_APB1Periph_USART3 | RCC_APB2Periph_GPIOB, ENABLE);
+    RCC_APB1PeriphClockCmd(RCC_APB1Periph_USART3, ENABLE);
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
 
     /* Configure the NVIC Preemption Priority Bits */
 

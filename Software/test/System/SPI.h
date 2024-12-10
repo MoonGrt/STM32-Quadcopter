@@ -3,7 +3,7 @@
 
 #include "stm32f10x.h"
 
-#define SOFT_SPI
+// #define SOFT_SPI
 #define HARD_SPI SPI2
 #define HARD_SPI_RCC RCC_APB1Periph_SPI2 // SPI2时钟
 

@@ -11,6 +11,7 @@
 #include "W25Q64.h"
 #include "SPI.h"
 #include "NRF24L01.h"
+#include "SPL06.h"
 
 #undef SUCCESS
 #define SUCCESS 0
@@ -79,16 +80,18 @@ void Init(void)
     // 系统初始化
     pid_param_Init(); // PID参数初始化
     LEDInit();        // LED闪灯初始化
-    // I2C 初始化
-    IIC_Init(); // I2C初始化
-    MpuInit();  // MPU6050初始
 
     // USART 初始化
     USART1_Config(115200);
     USART3_Config(115200);
 
+    // I2C 初始化
+    IIC_Init();   // I2C初始化
+    MpuInit();    // MPU6050初始
+    spl06_init(); // SPL06初始化
+
     // SPI 初始化
-    SPI_INIT(); // SPI初始化
+    SPI_INIT();      // SPI初始化
     NRF24L01_init(); // 2.4G遥控通信初始化
     W25Q64_Init();   // W25Q64初始化
 
@@ -97,6 +100,8 @@ void Init(void)
     // TIM3_Config(); // 系统工作周期初始化
 }
 
+void MPU6050_Test(void);
+void SPL06_Test(void);
 void W25Q64_Test(void);
 
 int main(void)
@@ -104,36 +109,37 @@ int main(void)
     // 系统初始化
     Init();
 
+    MPU6050_Test(); // MPU6050测试
+    SPL06_Test();  // SPL06测试
     W25Q64_Test(); // W25Q64测试
 
     while (1)
     {
         // ANTO_polling(); // 匿名上位机
         // PilotLED(); // LED刷新
-
-        MpuGetData();                         // 获取MPU6050数据
-        GetAngle(&MPU6050, &Angle, 0.00626f); // 获取姿态角度
-
-        // float dt = 0.003f; // 系统周期 3ms
-        // pidRateX.measured = MPU6050.gyroX * Gyro_G; // 内环测量值 角度/秒
-        // pidRateY.measured = MPU6050.gyroY * Gyro_G;
-        // pidRateZ.measured = MPU6050.gyroZ * Gyro_G;
-        // pidPitch.measured = Angle.pitch; // 外环测量值 单位：角度
-        // pidRoll.measured = Angle.roll;
-        // pidYaw.measured = Angle.yaw;
-        // pidUpdate(&pidRoll, dt);        // 调用PID处理函数来处理外环	横滚角PID
-        // pidRateX.desired = pidRoll.out; // 将外环的PID输出作为内环PID的期望值即为串级PID
-        // pidUpdate(&pidRateX, dt);       // 再调用内环
-        // pidUpdate(&pidPitch, dt); // 调用PID处理函数来处理外环	俯仰角PID
-        // pidRateY.desired = pidPitch.out;
-        // pidUpdate(&pidRateY, dt); // 再调用内环
-        // pidUpdate(&pidYaw, dt);
-        // pidRateZ.desired = pidYaw.out;
-        // pidUpdate(&pidRateZ, dt);
-        // printf("%f %f %f\n",pidYaw.desired,pidYaw.measured,pidRateZ.out);
-
-        delay_ms(500);
     }
+}
+
+void MPU6050_Test(void)
+{
+    MpuGetData();                         // 获取MPU6050数据
+    GetAngle(&MPU6050, &Angle, 0.00626f); // 获取姿态角度
+
+    pidRateX.measured = MPU6050.gyroX * Gyro_G; // 内环测量值 角度/秒
+    pidRateY.measured = MPU6050.gyroY * Gyro_G;
+    pidRateZ.measured = MPU6050.gyroZ * Gyro_G;
+    pidPitch.measured = Angle.pitch; // 外环测量值 单位：角度
+    pidRoll.measured = Angle.roll;
+    pidYaw.measured = Angle.yaw;
+    printf("Pitch: %.2f, Roll: %.2f, Yaw: %.2f\n", pidYaw.desired, pidYaw.measured, pidRateZ.out);
+}
+
+void SPL06_Test(void)
+{
+    spl06_result_t spl06_result;
+    spl06_get_result(&spl06_result);
+    // printf("Praw: %d, Traw: %d\n", spl06_result.Praw, spl06_result.Traw);
+    printf("Pcomp: %.2f, Tcomp: %.2f\n", spl06_result.Pcomp, spl06_result.Tcomp);
 }
 
 uint8_t MID;                                     // 定义用于存放MID号的变量

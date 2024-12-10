@@ -26,13 +26,14 @@
 #define SDA_H GPIOB->BSRR = GPIO_Pin_7 /* GPIO_SetBits(GPIOB , GPIO_Pin_11)   */
 #define SDA_L GPIOB->BRR = GPIO_Pin_7  /* GPIO_ResetBits(GPIOB , GPIO_Pin_11) */
 
-#define SCL_read GPIOB->IDR &GPIO_Pin_6 /* GPIO_ReadInputDataBit(GPIOB , GPIO_Pin_10) */
-#define SDA_read GPIOB->IDR &GPIO_Pin_7 /* GPIO_ReadInputDataBit(GPIOB , GPIO_Pin_11) */
+#define SCL_read GPIOB->IDR & GPIO_Pin_6 /* GPIO_ReadInputDataBit(GPIOB , GPIO_Pin_10) */
+#define SDA_read GPIOB->IDR & GPIO_Pin_7 /* GPIO_ReadInputDataBit(GPIOB , GPIO_Pin_11) */
 
 // 0表示写
 #define I2C_Direction_Trans 0
 // １表示读
 #define I2C_Direction_Rec 1
+
 /*====================================================================================================*/
 /*====================================================================================================*/
 // PB6 SCL

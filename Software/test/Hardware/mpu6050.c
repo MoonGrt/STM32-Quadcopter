@@ -67,10 +67,10 @@ int8_t MpuInit(void) // 初始化
 {
     uint8_t date = SUCCESS;
 
-    bLED_L(); // 前灯亮
-    aLED_L(); // 前灯亮
-    fLED_H(); // 后灯灭
-    hLED_H(); // 后灯灭
+    // bLED_L(); // 前灯亮
+    // aLED_L(); // 前灯亮
+    // fLED_H(); // 后灯灭
+    // hLED_H(); // 后灯灭
 
     do
     {
@@ -86,8 +86,8 @@ int8_t MpuInit(void) // 初始化
     date = IIC_Read_One_Byte(MPU6050_ADDRESS, 0x75);
     if (date != MPU6050_PRODUCT_ID)
     {
-//        printf("Read MPU6050 ID: %d\r\n", date);
-//        printf("MPU6050 init failed\r\n");
+        // printf("Read MPU6050 ID: %d\r\n", date);
+        // printf("MPU6050 init failed\r\n");
         return FAILED;
     }
     else

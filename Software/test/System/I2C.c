@@ -35,7 +35,6 @@ void IIC_Init(void)
 {
     GPIO_InitTypeDef GPIO_InitStrucSUCCESS;
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
-
     GPIO_InitStrucSUCCESS.GPIO_Pin = SCL_PIN | SDA_PIN;
     GPIO_InitStrucSUCCESS.GPIO_Speed = GPIO_Speed_50MHz;
     GPIO_InitStrucSUCCESS.GPIO_Mode = GPIO_Mode_Out_OD;

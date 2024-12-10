@@ -14,8 +14,8 @@ sLED LED = {300, AllFlashLight}; // LED initial statue is off;
  ***************************************************************/
 void LEDInit(void)
 {
+    AFIO->MAPR = 0X02000000; // 使能4线烧写 释放某些与烧写相关的引脚  // 关闭JTAG-DP，启用SW-DP
     GPIO_InitTypeDef GPIO_InitStructure;
-    AFIO->MAPR = 0X02000000; // 使能4线烧写 释放某些与烧写相关的引脚
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
     GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_8 | GPIO_Pin_9; // LED12
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
