@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "remote.h": "c"
+        "remote.h": "c",
+        "mpu6050.h": "c",
+        "stm32f10x.h": "c"
     }
 }

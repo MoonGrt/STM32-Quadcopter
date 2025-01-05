@@ -1,5 +1,5 @@
 Dependencies for Project 'Project', Target 'Target 1': (DO NOT MODIFY !)
-F (.\User\main.c)(0x675BC43E)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Start -I .\User -I .\Library -I .\Hardware -I .\System -I .\Math-I.\RTE\_Target_1-IS:\DevTools\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-IS:\DevTools\Keil\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (.\User\main.c)(0x6762CE1D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Start -I .\User -I .\Library -I .\Hardware -I .\System -I .\Math-I.\RTE\_Target_1-IS:\DevTools\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-IS:\DevTools\Keil\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (.\Start\stm32f10x.h)(0x4D783CB4)
 I (.\Start\core_cm3.h)(0x4D523B58)
 I (S:\DevTools\Keil\ARM\ARMCC\include\stdint.h)(0x588B8344)
